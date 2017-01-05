@@ -34,4 +34,4 @@ class CountrySerializer(serializers.ModelSerializer):
 		model = Country
 
 
-		fields = ['country']
+		fields = ['field_name']

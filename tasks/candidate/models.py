@@ -16,12 +16,12 @@ class EnglishLevel(models.Model):
 
 class Country(models.Model):
 
-	country = models.CharField(max_length=75)
+	field_name = models.CharField(max_length=75)
 
 
 	def __unicode__(self):
 
-		return self.country
+		return self.field_name
 
 
 class Candidate(models.Model):

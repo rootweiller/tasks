@@ -18,5 +18,8 @@ urlpatterns = [
     #Config
     url(r'api/v1/dropdowns/add', EnglishLevelAdd.as_view(), name='EnglishLevelAdd'),
     url(r'api/v1/dropdowns', EnglishLevelDetail.as_view(), name='EnglishLevelAll'),
-    url(r'api/v1/dropdowns/(?P<slug>[-\w]+)/$', EnglishLevelDetail.as_view(), name='EnglishLevelDetail'),
+    url(r'api/v1/(?P<slug>[-\w]+)/$', EnglishLevelDetail.as_view(), name='EnglishLevelDetail'),
+
+    #Country
+    url(r'api/v1/config/country', CountrySerializer.as_view(), name='CountrySerializer'),
 ]

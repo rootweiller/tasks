@@ -33,3 +33,5 @@ class EnglishLevelDetail(generics.ListAPIView):
 
 
 	serializer_class = EnglishLevelSerializer
+
+
