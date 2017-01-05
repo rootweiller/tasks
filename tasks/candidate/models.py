@@ -4,6 +4,25 @@ from django.db import models
 
 
 
+class EnglishLevel(models.Model):
+
+	field_name = models.CharField(max_length=75)
+
+
+	def __unicode__(self):
+
+		return self.field_name
+
+
+class Country(models.Model):
+
+	country = models.CharField(max_length=75)
+
+
+	def __unicode__(self):
+
+		return self.country
+
 
 class Candidate(models.Model):
 
@@ -12,8 +31,8 @@ class Candidate(models.Model):
 	email = models.EmailField()
 	hours_per_week = models.IntegerField()
 	where_found_us = models.CharField(max_length=75)
-	country = models.CharField(max_length=75)
-	english_level = models.CharField(max_length=75)
+	country = models.ForeignKey(Country)
+	english_level = models.ForeignKey(EnglishLevel)
 	comments = models.CharField(max_length=150, blank=True)
 
 
@@ -21,5 +40,7 @@ class Candidate(models.Model):
 	def __unicode__(self):
 
 		return self.name
+
+
 
 
